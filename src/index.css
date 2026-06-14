@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+body {
+  background: #020617;
+  overflow-x: hidden;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(234, 179, 8, 0.12),
+      transparent 45%
+    );
+}

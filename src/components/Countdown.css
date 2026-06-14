@@ -1,0 +1,42 @@
+.countdown-card {
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,215,0,0.15);
+
+  border-radius: 24px;
+
+  padding: 1.5rem;
+
+  backdrop-filter: blur(12px);
+
+  transition: all 0.4s ease;
+}
+
+.countdown-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255,215,0,0.4);
+
+  box-shadow:
+    0 0 30px rgba(255,215,0,0.08);
+}
+
+.countdown-number {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 4rem;
+
+  color: #fef3c7;
+}
+
+.countdown-label {
+  margin-top: 0.5rem;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #facc15;
+
+  font-size: 0.8rem;
+}

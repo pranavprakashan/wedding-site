@@ -1,0 +1,98 @@
+.hero-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 500;
+  color: #fef6c9;
+
+  text-shadow:
+    0 0 15px rgba(255,215,0,0.12);
+}
+
+.hero-ampersand {
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem;
+  color: #facc15;
+  margin: 0.5rem 0;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 215, 120, 0.12),
+      rgba(255, 215, 120, 0.05) 35%,
+      transparent 75%
+    );
+}
+
+.stars span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #facc15;
+  border-radius: 50%;
+  animation: floatStar 6s linear infinite;
+  opacity: 0.7;
+}
+
+.stars span:nth-child(1) {
+  top: 20%;
+  left: 20%;
+}
+
+.stars span:nth-child(2) {
+  top: 30%;
+  right: 25%;
+}
+
+.stars span:nth-child(3) {
+  top: 70%;
+  left: 15%;
+}
+
+.stars span:nth-child(4) {
+  top: 75%;
+  right: 20%;
+}
+
+.stars span:nth-child(5) {
+  top: 45%;
+  left: 80%;
+}
+
+.stars span:nth-child(6) {
+  top: 60%;
+  right: 40%;
+}
+
+@keyframes floatStar {
+  0%,100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+.hero-divider {
+  width: 180px;
+  height: 1px;
+  background: rgba(255, 215, 0, 0.4);
+  margin: 1.5rem auto;
+}
+
+.hero-couple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-symbol {
+  color: #facc15;
+  font-size: 2rem;
+}
