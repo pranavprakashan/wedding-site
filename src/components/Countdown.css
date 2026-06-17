@@ -1,42 +1,66 @@
 .countdown-card {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 
-  border: 1px solid rgba(255,215,0,0.15);
+  border: 1px solid rgba(255, 215, 0, 0.15);
 
-  border-radius: 24px;
+  border-radius: 20px;
 
-  padding: 1.5rem;
+  padding: 1rem;
 
   backdrop-filter: blur(12px);
 
   transition: all 0.4s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 130px;
 }
 
 .countdown-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
-  border-color: rgba(255,215,0,0.4);
+  border-color: rgba(255, 215, 0, 0.4);
 
   box-shadow:
-    0 0 30px rgba(255,215,0,0.08);
+    0 0 20px rgba(255, 215, 0, 0.08),
+    0 0 40px rgba(255, 215, 0, 0.04);
 }
 
 .countdown-number {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 6vw, 5rem);
 
   color: #fef3c7;
+
+  line-height: 1;
 }
 
 .countdown-label {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 
   text-transform: uppercase;
 
   color: #facc15;
 
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+
+  .countdown-card {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+  }
+
 }

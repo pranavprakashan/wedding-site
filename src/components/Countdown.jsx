@@ -32,7 +32,16 @@ function Countdown() {
   }, []);
 
   return (
-    <section className="bg-[#020B2D] py-32 px-6">
+   <section
+  className="
+    bg-[#020B2D]
+    py-20
+    md:py-32
+    px-4
+    sm:px-6
+    md:px-8
+  "
+>
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -41,12 +50,32 @@ function Countdown() {
         className="max-w-6xl mx-auto text-center"
       >
 
-        <p className="tracking-[8px] text-yellow-400 mb-6 uppercase">
+        <p
+  className="
+    tracking-[4px]
+    sm:tracking-[6px]
+    md:tracking-[8px]
+    text-yellow-400
+    text-xs
+    sm:text-sm
+    mb-4
+    md:mb-6
+    uppercase
+  "
+>
           Counting Down
-        </p>
+        </p>  
 
         <h2
-          className="text-5xl md:text-7xl text-yellow-100 mb-16"
+          className="
+  text-3xl
+  sm:text-4xl
+  md:text-5xl
+  lg:text-7xl
+  text-yellow-100
+  mb-10
+  md:mb-16
+"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
           }}
@@ -54,7 +83,16 @@ function Countdown() {
           Until Forever Begins
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+  className="
+    grid
+    grid-cols-2
+    md:grid-cols-4
+    gap-3
+    sm:gap-4
+    md:gap-6
+  "
+>
 
           <CountdownCard
             value={timeLeft.days}
@@ -85,7 +123,13 @@ function Countdown() {
 
 function CountdownCard({ value, label }) {
   return (
-    <div className="countdown-card">
+    <div
+  className="
+    countdown-card
+    min-h-[130px]
+    md:min-h-[180px]
+  "
+>
 
       <div className="countdown-number">
         {value}
