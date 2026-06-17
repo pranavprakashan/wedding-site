@@ -34,7 +34,7 @@ function Countdown() {
   return (
    <section
   className="
-    bg-[#020B2D]
+    section-ivory
     py-20
     md:py-32
     px-4
@@ -55,7 +55,7 @@ function Countdown() {
     tracking-[4px]
     sm:tracking-[6px]
     md:tracking-[8px]
-    text-yellow-400
+    text-amber-700
     text-xs
     sm:text-sm
     mb-4
@@ -72,7 +72,7 @@ function Countdown() {
   sm:text-4xl
   md:text-5xl
   lg:text-7xl
-  text-yellow-100
+  text-slate-800
   mb-10
   md:mb-16
 "

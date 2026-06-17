@@ -1,3 +1,35 @@
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+
+  opacity: 0.16;
+  mix-blend-mode: luminosity;
+
+  filter:
+    grayscale(100%)
+    blur(1px);
+
+  transform: scale(1.03);
+  
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2,11,45,0.78) 0%,
+      rgba(2,11,45,0.65) 40%,
+      rgba(2,11,45,0.82) 100%
+    );
+}
+
 .hero-name {
   font-family: "Cormorant Garamond", serif;
 
@@ -24,8 +56,8 @@
   background:
     radial-gradient(
       circle at center,
-      rgba(255, 215, 120, 0.12),
-      rgba(255, 215, 120, 0.05) 35%,
+      rgba(212,163,115,0.18),
+      rgba(212,163,115,0.05) 35%,
       transparent 75%
     );
 }
@@ -130,6 +162,14 @@
 
   .hero-symbol {
     font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-background {
+    background-position: center 15%;
   }
 
 }

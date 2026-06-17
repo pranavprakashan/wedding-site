@@ -1,3 +1,4 @@
+import couplePhoto from "../assets/us.jpg";
 import { motion } from "framer-motion";
 import { weddingData } from "../data/weddingData";
 import "./Hero.css";
@@ -5,6 +6,45 @@ import "./Hero.css";
 function Hero() {
   return (
     <section className="relative h-screen overflow-hidden bg-[#020B2D] flex items-center justify-center">
+
+{/* Background Photo */}
+{/* Background Photo */}
+<motion.div
+  className="hero-background"
+  style={{
+    backgroundImage: `url(${couplePhoto})`,
+  }}
+  initial={{
+    opacity: 0,
+    scale: 1.08,
+  }}
+  whileInView={{
+    opacity: 0.18,
+    scale: 1.03,
+  }}
+  viewport={{
+    once: false,
+    amount: 0.4,
+  }}
+  transition={{
+    duration: 1.8,
+    ease: [0.25, 0.46, 0.45, 0.94],
+  }}
+/>
+
+{/* Dark Overlay */}
+<motion.div
+  className="hero-overlay"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{
+    once: false,
+    amount: 0.4,
+  }}
+  transition={{
+    duration: 1.8,
+  }}
+/>
 
       {/* Glow */}
       <div className="absolute inset-0 hero-glow" />

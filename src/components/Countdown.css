@@ -1,7 +1,6 @@
 .countdown-card {
-  background: rgba(255, 255, 255, 0.03);
-
-  border: 1px solid rgba(255, 215, 0, 0.15);
+   background: #eae5d9;
+  border: 1px solid rgba(80, 68, 27, 0.25);
 
   border-radius: 20px;
 
@@ -22,7 +21,7 @@
 .countdown-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(255, 215, 0, 0.4);
+  border-color: rgba(80, 68, 3, 0.4);
 
   box-shadow:
     0 0 20px rgba(255, 215, 0, 0.08),
@@ -34,7 +33,7 @@
 
   font-size: clamp(2.2rem, 6vw, 5rem);
 
-  color: #fef3c7;
+   color: #1f2937;
 
   line-height: 1;
 }
