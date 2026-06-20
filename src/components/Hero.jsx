@@ -80,7 +80,7 @@ function Hero() {
       uppercase
     "
   >
-    Two Souls • One Story
+    • Two Souls • One Story •  
   </motion.p>
 
   <div className="hero-couple">
