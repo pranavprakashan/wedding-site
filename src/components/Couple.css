@@ -12,11 +12,30 @@
 }
 
 .couple-divider {
-  width: 220px;
+  width: min(280px, 80%);
   height: 1px;
-  background: #d8c7a1;
-  margin: 0 auto 80px;
-  transform-origin: center;
+  background: rgba(212, 176, 106, 0.35);
+
+  margin: 50px auto 35px auto;
+
+  position: relative;
+}
+
+.couple-divider::after {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: #1f1a14; /* same as section background */
+
+  padding: 0 18px;
+
+  color: #d4b06a;
+
+  font-size: 0.8rem;
 }
 
 .couple-container {

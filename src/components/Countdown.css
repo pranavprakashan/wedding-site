@@ -1,65 +1,188 @@
-.countdown-card {
-   background: #eae5d9;
-  border: 1px solid rgba(80, 68, 27, 0.25);
+.countdown-section {
+  position: relative;
 
-  border-radius: 20px;
+  padding: 180px 20px;
 
-  padding: 1rem;
+  text-align: center;
 
-  backdrop-filter: blur(12px);
+  background: #f4efe8;
 
-  transition: all 0.4s ease;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 130px;
+  overflow: hidden;
 }
 
-.countdown-card:hover {
-  transform: translateY(-5px);
+/* WATERMARK NUMBER */
 
-  border-color: rgba(80, 68, 3, 0.4);
+.countdown-bg-number {
+  position: absolute;
 
-  box-shadow:
-    0 0 20px rgba(255, 215, 0, 0.08),
-    0 0 40px rgba(255, 215, 0, 0.04);
-}
+  top: 50%;
+  left: 50%;
 
-.countdown-number {
+  transform: translate(-50%, -50%);
+
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-size: 25rem;
 
-   color: #1f2937;
+  color: #253055;
 
-  line-height: 1;
+  opacity: 0.03;
+
+  pointer-events: none;
 }
 
-.countdown-label {
-  margin-top: 0.75rem;
+/* SUBTITLE */
 
-  letter-spacing: 2px;
+.countdown-subtitle {
+  color: #c8a25a;
+
+  letter-spacing: 8px;
+
+  font-size: 0.85rem;
+
+  margin-bottom: 25px;
+}
+
+/* DAYS NUMBER */
+
+.countdown-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(6rem, 14vw, 10rem);
+
+  color: #253055;
+
+  line-height: 1;
+
+  margin: 0;
+}
+
+.countdown-days-label {
+  color: #c8a25a;
+
+  letter-spacing: 10px;
+
+  margin-top: 10px;
+
+  margin-bottom: 70px;
+}
+
+/* TIME GRID */
+
+.countdown-grid {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.time-card {
+  width: 170px;
+
+  padding: 30px;
+
+  background: rgba(255,255,255,0.55);
+
+  border: 1px solid rgba(200,162,90,0.2);
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.time-card span {
+  display: block;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 4rem;
+
+  color: #253055;
+}
+
+.time-card small {
+  color: #c8a25a;
 
   text-transform: uppercase;
 
-  color: #facc15;
-
-  font-size: 0.7rem;
+  letter-spacing: 4px;
 }
 
-@media (min-width: 768px) {
+/* HEART */
 
-  .countdown-card {
-    min-height: 180px;
-    padding: 1.5rem;
+.countdown-heart {
+  margin-top: 70px;
+
+  color: #c8a25a;
+
+  font-size: 2.8rem;
+
+  animation: heartbeat 4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+  0%,20%,40%,100% {
+    transform: scale(1);
   }
 
-  .countdown-label {
-    font-size: 0.8rem;
-    letter-spacing: 4px;
+  10% {
+    transform: scale(1.08);
   }
 
+  30% {
+    transform: scale(1.15);
+  }
+}
+
+/* MESSAGE */
+
+.countdown-message {
+  margin-top: 30px;
+
+  color: #6d7285;
+
+  font-size: 1.1rem;
+
+  max-width: 500px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  line-height: 1.8;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .countdown-section {
+    padding: 120px 20px;
+  }
+
+  .countdown-bg-number {
+    font-size: 12rem;
+  }
+
+  .countdown-grid {
+    gap: 15px;
+  }
+
+  .time-card {
+    width: 110px;
+    padding: 20px;
+  }
+
+  .time-card span {
+    font-size: 2.5rem;
+  }
+
+  .countdown-message {
+    font-size: 0.95rem;
+  }
 }

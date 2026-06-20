@@ -3,143 +3,106 @@ import { motion } from "framer-motion";
 import "./Countdown.css";
 
 function Countdown() {
-  const weddingDate = new Date("August 30, 2026 00:00:00").getTime();
 
-  const [timeLeft, setTimeLeft] = useState({});
+  const weddingDate = new Date("2026-08-30T11:15:00");
+
+  const calculateTimeLeft = () => {
+    const difference = weddingDate - new Date();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        ),
-        minutes: Math.floor(
-          (distance % (1000 * 60 * 60)) /
-            (1000 * 60)
-        ),
-        seconds: Math.floor(
-          (distance % (1000 * 60)) / 1000
-        ),
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-   <section
-  className="
-    section-ivory
-    py-20
-    md:py-32
-    px-4
-    sm:px-6
-    md:px-8
-  "
->
+    <section className="countdown-section">
 
-      <motion.div
+      <div className="countdown-bg-number">
+        {timeLeft.days}
+      </div>
+
+      <motion.p
+        className="countdown-subtitle"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="max-w-6xl mx-auto text-center"
+        viewport={{ once: true }}
       >
+        UNTIL FOREVER BEGINS
+      </motion.p>
 
-        <p
-  className="
-    tracking-[4px]
-    sm:tracking-[6px]
-    md:tracking-[8px]
-    text-amber-700
-    text-xs
-    sm:text-sm
-    mb-4
-    md:mb-6
-    uppercase
-  "
->
-          Counting Down
-        </p>  
+      <motion.h2
+        className="countdown-title"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        {timeLeft.days}
+      </motion.h2>
 
-        <h2
-          className="
-  text-3xl
-  sm:text-4xl
-  md:text-5xl
-  lg:text-7xl
-  text-slate-800
-  mb-10
-  md:mb-16
-"
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-          }}
+      <p className="countdown-days-label">
+        DAYS
+      </p>
+
+      <div className="countdown-grid">
+
+        <motion.div
+          className="time-card"
+          whileHover={{ y: -6 }}
         >
-          Until Forever Begins
-        </h2>
+          <span>{timeLeft.hours}</span>
+          <small>Hours</small>
+        </motion.div>
 
-        <div
-  className="
-    grid
-    grid-cols-2
-    md:grid-cols-4
-    gap-3
-    sm:gap-4
-    md:gap-6
-  "
->
+        <motion.div
+          className="time-card"
+          whileHover={{ y: -6 }}
+        >
+          <span>{timeLeft.minutes}</span>
+          <small>Minutes</small>
+        </motion.div>
 
-          <CountdownCard
-            value={timeLeft.days}
-            label="Days"
-          />
+        <motion.div
+          className="time-card"
+          whileHover={{ y: -6 }}
+        >
+          <span>{timeLeft.seconds}</span>
+          <small>Seconds</small>
+        </motion.div>
 
-          <CountdownCard
-            value={timeLeft.hours}
-            label="Hours"
-          />
+      </div>
 
-          <CountdownCard
-            value={timeLeft.minutes}
-            label="Minutes"
-          />
+      <div className="countdown-heart">
+        ♡
+      </div>
 
-          <CountdownCard
-            value={timeLeft.seconds}
-            label="Seconds"
-          />
+      <p className="countdown-message">
+        Every passing moment brings us closer
+        to our forever.
+      </p>
 
-        </div>
-
-      </motion.div>
     </section>
-  );
-}
-
-function CountdownCard({ value, label }) {
-  return (
-    <div
-  className="
-    countdown-card
-    min-h-[130px]
-    md:min-h-[180px]
-  "
->
-
-      <div className="countdown-number">
-        {value}
-      </div>
-
-      <div className="countdown-label">
-        {label}
-      </div>
-
-    </div>
   );
 }
 

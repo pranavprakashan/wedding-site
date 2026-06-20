@@ -106,17 +106,6 @@ function Hero() {
           30 AUGUST 2026
         </motion.p>
 
-        <motion.div
-          className="scroll-indicator"
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 1.8
-          }}
-        >
-          ↓
-        </motion.div>
-
       </div>
 
     </section>
