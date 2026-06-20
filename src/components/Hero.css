@@ -1,175 +1,185 @@
-.hero-background {
-  position: absolute;
-  inset: 0;
+.hero {
+  background: #f5f0e8;
 
-  background-size: cover;
-  background-position: center 25%;
-  background-repeat: no-repeat;
+  position: relative;
 
-  opacity: 0.16;
-  mix-blend-mode: luminosity;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  overflow: hidden;
+}
+
+/* IMAGE */
+
+.hero-image-wrapper {
+  width: min(70vw, 900px);
+
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-crop {
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
 
   filter:
-    grayscale(100%)
-    blur(1px);
+    sepia(8%)
+    contrast(0.98);
 
-  transform: scale(1.03);
-  
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 82%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 82%,
+    transparent 100%
+  );
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
+/* CONTENT */
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(2,11,45,0.78) 0%,
-      rgba(2,11,45,0.65) 40%,
-      rgba(2,11,45,0.82) 100%
-    );
+.hero-content {
+  text-align: center;
+
+  margin-top: -10px;
+
+  width: 100%;
 }
+
+/* TAGLINE */
+
+.hero-tagline {
+  color: #c8a25a;
+
+  text-transform: uppercase;
+
+  letter-spacing: 8px;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+/* NAMES */
 
 .hero-name {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(3rem, 10vw, 7rem);
+  color: #23345f;
+
+  font-size: clamp(6rem, 10vw, 9rem);
 
   font-weight: 500;
 
-  color: #fef6c9;
+  line-height: 0.85;
 
-  text-shadow:
-    0 0 15px rgba(255, 215, 0, 0.12);
-
-  line-height: 1.1;
+  margin: 0;
 }
+
+/* AMPERSAND */
 
 .hero-ampersand {
-  font-family: "Great Vibes", cursive;
-  font-size: 5rem;
-  color: #facc15;
-  margin: 0.5rem 0;
+  font-family: "Cormorant Garamond", serif;
+
+  color: #c8a25a;
+
+  font-size: clamp(3rem, 5vw, 4.5rem);
+
+  line-height: 1;
+
+  margin: 8px 0;
 }
 
-.hero-glow {
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(212,163,115,0.18),
-      rgba(212,163,115,0.05) 35%,
-      transparent 75%
-    );
-}
-
-.stars span {
-  width: 3px;
-  height: 3px;
-
-  background: #facc15;
-
-  border-radius: 50%;
-
-  animation: floatStar 6s linear infinite;
-
-  opacity: 0.7;
-}
-
-@media (min-width: 768px) {
-
-  .stars span {
-    width: 4px;
-    height: 4px;
-  }
-
-}
-
-.stars span:nth-child(1) {
-  top: 20%;
-  left: 20%;
-}
-
-.stars span:nth-child(2) {
-  top: 30%;
-  right: 25%;
-}
-
-.stars span:nth-child(3) {
-  top: 70%;
-  left: 15%;
-}
-
-.stars span:nth-child(4) {
-  top: 75%;
-  right: 20%;
-}
-
-.stars span:nth-child(5) {
-  top: 45%;
-  left: 80%;
-}
-
-.stars span:nth-child(6) {
-  top: 60%;
-  right: 40%;
-}
-
-@keyframes floatStar {
-  0%,100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.8);
-  }
-}
+/* DIVIDER */
 
 .hero-divider {
   width: 180px;
   height: 1px;
-  background: rgba(255, 215, 0, 0.4);
-  margin: 1.5rem auto;
+
+  background: rgba(200, 162, 90, 0.45);
+
+  margin: 28px auto;
 }
 
-.hero-couple {
-  display: flex;
+/* DATE */
 
-  flex-direction: column;
+.hero-date {
+  color: #7c8499;
 
-  align-items: center;
+  letter-spacing: 8px;
 
-  justify-content: center;
+  font-size: 0.95rem;
 
-  gap: 0.5rem;
+  font-weight: 400;
+
+  margin-bottom: 35px;
 }
 
-.hero-symbol {
-  color: #facc15;
+/* SCROLL */
 
-  font-size: 1.5rem;
+.scroll-indicator {
+  color: #c8a25a;
 
-  opacity: 0.8;
+  font-size: 1.8rem;
 }
 
-@media (min-width: 768px) {
-
-  .hero-couple {
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .hero-symbol {
-    font-size: 2rem;
-  }
-
-}
+/* MOBILE */
 
 @media (max-width: 768px) {
 
-  .hero-background {
-    background-position: center 15%;
+  .hero {
+    padding-top: 20px;
+    padding-bottom: 60px;
   }
 
+  .hero-image-wrapper {
+    width: 94%;
+  }
+
+  .hero-tagline {
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+
+    margin-bottom: 14px;
+  }
+
+  .hero-name {
+    font-size: clamp(4rem, 16vw, 5.5rem);
+  }
+
+  .hero-ampersand {
+    font-size: 2.8rem;
+    margin: 6px 0;
+  }
+
+  .hero-divider {
+    width: 120px;
+    margin: 20px auto;
+  }
+
+  .hero-date {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+  }
+
+  .scroll-indicator {
+    font-size: 1.4rem;
+  }
 }

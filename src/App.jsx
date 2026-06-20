@@ -1,20 +1,16 @@
 import Hero from "./components/Hero";
-import Story from "./components/Story";
-import Timeline from "./components/Timeline";
-import Countdown from "./components/Countdown";
 import Invitation from "./components/Invitation";
 import WeddingDetails from "./components/WeddingDetails";
+import Couple from "./components/Couple";
 
 function App() {
   return (
-    <>
-      <Hero />
-      <Story />
-      <Invitation />
-      <WeddingDetails />
-      <Timeline />
-      <Countdown />
-    </>
+<>
+  <Hero />
+  <Invitation />
+  <WeddingDetails />
+  <Couple />
+</>
   );
 }
 

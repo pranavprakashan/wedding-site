@@ -1,84 +1,141 @@
 import { motion } from "framer-motion";
+import "./WeddingDetails.css";
 
 function WeddingDetails() {
   return (
-    <section className="py-24 px-6 wedding-details-section">
+    <section className="details-section">
 
-   <motion.div
-  className="details-card"
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: false }}
-  transition={{ duration: 1 }}
->
+      <div className="details-container">
 
-  <motion.div
-    className="ornament"
-    animate={{ rotate: [0, 8, -8, 0] }}
-    transition={{
-      duration: 5,
-      repeat: Infinity
-    }}
-  >
-    💍
-  </motion.div>
+        {/* LEFT SIDE */}
 
-  <div className="date-showcase">
+        <motion.div
+          className="details-date"
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        >
 
-    <span className="date-day">
-      30
-    </span>
+          <div className="date-circle"></div>
 
-    <span className="date-month">
-      AUGUST
-    </span>
+          <div className="date-sparkle sparkle-1">✦</div>
+          <div className="date-sparkle sparkle-2">✦</div>
+          <div className="date-sparkle sparkle-3">✦</div>
 
-    <span className="date-year">
-      2026
-    </span>
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.6 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 1.2,
+              type: "spring"
+            }}
+          >
+            30
+          </motion.h2>
 
-  </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            AUGUST
+          </motion.p>
 
-  <motion.div
-    className="gold-divider"
-    initial={{ width: 0 }}
-    whileInView={{ width: 140 }}
-    viewport={{ once: false }}
-    transition={{ duration: 1.2 }}
-  />
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
+            2026
+          </motion.span>
 
-  <div className="venue-block">
+        </motion.div>
 
-    <h3 className="venue-name">
-      Aurea Auditorium
-    </h3>
+        {/* RIGHT SIDE */}
 
-    <p className="venue-address">
-      Thalassery
-    </p>
+        <motion.div
+          className="details-content"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        >
 
-  </div>
+          <div className="watermark">
+            ❀
+          </div>
 
-  <div className="muhurtham-box">
+          <motion.div
+            className="details-divider"
+            initial={{ width: 0 }}
+            whileInView={{ width: 180 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span className="divider-star">✦</span>
+          </motion.div>
 
-    <span>Muhurtham</span>
+          <motion.h3
+            className="venue-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            Aurea Auditorium
+          </motion.h3>
 
-    <h4>
-      11:15 AM – 12:00 PM
-    </h4>
+          <motion.p
+            className="venue-location"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
+            Opposite KINFRA Small Industries Park
+            <br />
+            Chungam, Eranholi
+            <br />
+            Thalassery
+          </motion.p>
 
-  </div>
+          <motion.div
+            className="muhurtham-block"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7 }}
+          >
 
-  <a
-    href="https://maps.app.goo.gl/BJa1JjhxRM7nx6PT9"
-    target="_blank"
-    rel="noreferrer"
-    className="map-button"
-  >
-    📍 Open in Google Maps
-  </a>
+            <span>Muhurtham</span>
 
-</motion.div>
+            <h4>11:15 AM – 12:00 PM</h4>
+
+          </motion.div>
+
+          <motion.a
+            href="https://maps.app.goo.gl/BJa1JjhxRM7nx6PT9"
+            target="_blank"
+            rel="noreferrer"
+            className="venue-button"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1 }}
+          >
+            <span className="pin">📍</span>
+
+            Open Venue
+
+          </motion.a>
+
+        </motion.div>
+
+      </div>
 
     </section>
   );

@@ -1,0 +1,315 @@
+.details-section {
+
+  background: #f5f0e8;
+
+  padding: 160px 30px;
+}
+
+.details-container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+/* LEFT */
+
+.details-date {
+
+  position: relative;
+
+  text-align: center;
+}
+
+.date-circle {
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(200,162,90,0.25);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  animation: rotateSlow 30s linear infinite;
+}
+
+@keyframes rotateSlow {
+
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.date-sparkle {
+
+  position: absolute;
+
+  color: #c8a25a;
+
+  font-size: 1rem;
+}
+
+.sparkle-1 {
+
+  top: 10%;
+  left: 12%;
+
+  animation: twinkle 4s infinite;
+}
+
+.sparkle-2 {
+
+  top: 60%;
+  right: 10%;
+
+  animation: twinkle 5s infinite;
+}
+
+.sparkle-3 {
+
+  bottom: 10%;
+  left: 18%;
+
+  animation: twinkle 6s infinite;
+}
+
+@keyframes twinkle {
+
+  0%,100% {
+    opacity: .3;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.details-date h2 {
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(8rem, 16vw, 12rem);
+
+  color: #23345f;
+
+  line-height: 1;
+
+  margin: 0;
+}
+
+.details-date p {
+
+  color: #c8a25a;
+
+  letter-spacing: 10px;
+
+  margin-top: 10px;
+}
+
+.details-date span {
+
+  color: #7c8499;
+
+  letter-spacing: 5px;
+}
+
+/* RIGHT */
+
+.details-content {
+
+  position: relative;
+}
+
+.watermark {
+
+  position: absolute;
+
+  top: -40px;
+  right: 0;
+
+  font-size: 12rem;
+
+  color: rgba(200,162,90,0.05);
+
+  pointer-events: none;
+}
+
+.details-divider {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 40px;
+
+  border-top: 1px solid rgba(200,162,90,0.35);
+}
+
+.divider-star {
+
+  color: #c8a25a;
+
+  animation: twinkle 3s infinite;
+}
+
+.venue-title {
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(2.8rem, 4vw, 4rem);
+
+  color: #23345f;
+
+  margin-bottom: 20px;
+}
+
+.venue-location {
+
+  color: #6b7388;
+
+  line-height: 2;
+
+  margin-bottom: 40px;
+}
+
+.muhurtham-block {
+
+  margin-bottom: 40px;
+}
+
+.muhurtham-block span {
+
+  color: #c8a25a;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+.muhurtham-block h4 {
+
+  color: #23345f;
+
+  font-size: 1.4rem;
+
+  font-weight: 500;
+}
+
+.venue-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 28px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: #23345f;
+
+  border: 1px solid rgba(200,162,90,0.4);
+
+  transition: all .35s ease;
+}
+
+.venue-button:hover {
+
+  transform: translateY(-4px);
+
+  background: rgba(200,162,90,0.08);
+
+  box-shadow:
+    0 10px 25px rgba(200,162,90,0.15);
+}
+
+.pin {
+
+  animation: pulsePin 2s infinite;
+}
+
+@keyframes pulsePin {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.button-arrow {
+
+  transition: all .3s ease;
+}
+
+.venue-button:hover .button-arrow {
+
+  transform:
+    translateX(6px)
+    translateY(-4px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .details-container {
+
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+  }
+
+  .details-content {
+
+    text-align: center;
+  }
+
+  .details-divider {
+
+    justify-content: center;
+  }
+
+  .date-circle {
+
+    width: 180px;
+    height: 180px;
+  }
+
+  .watermark {
+
+    display: none;
+  }
+}

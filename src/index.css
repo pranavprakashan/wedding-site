@@ -1,392 +1,133 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap");
 
-/* ===== COLOR SYSTEM ===== */
-
-:root {
-
-  --bg-dark: #020B2D;
-
-  --bg-ivory: #F8F5EF;
-
-  --bg-white: #FFFFFF;
-
-  --text-dark: #1F2937;
-
-  --text-light: #F9FAFB;
-
-  --gold: #D4AF37;
-
-  --gold-light: #E7C75F;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* ===== GLOBAL ===== */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--bg-dark);
+  margin: 0;
 
-  color: var(--text-light);
+  background: #f5f0e8;
 
-  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
 }
-
-/* ===== HERO ===== */
-
-.hero-glow {
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(212, 175, 55, 0.12),
-      rgba(212, 175, 55, 0.05) 35%,
-      transparent 75%
-    );
-}
-
-/* ===== SECTION HELPERS ===== */
-
-.section-ivory {
-  background: var(--bg-ivory);
-  color: var(--text-dark);
-}
-
-.section-white {
-  background: var(--bg-white);
-  color: var(--text-dark);
-}
-
-.section-dark {
-  background: var(--bg-dark);
-  color: var(--text-light);
-}
-
 
 .invitation-section {
-  background: var(--background-color);
-}
 
-.invitation-subtitle {
-  color: var(--accent-color);
-}
+  max-width: 900px;
 
-.invitation-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  color: var(--heading-color);
-}
+  margin: 0 auto;
 
-.invitation-text {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-
-  font-size: 1.15rem;
-  line-height: 2;
-
-  color: var(--text-color);
-}
-
-.wedding-details-section {
-  background: var(--bg);
-}
-
-.details-subtitle {
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-size: 0.8rem;
-}
-
-.details-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  color: var(--primary);
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-}
-
-.details-card {
-  max-width: 800px;
-  margin: auto;
-  background: rgba(255,255,255,0.45);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 28px;
-  padding: 3rem;
-}
-
-.venue-name {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.venue-address {
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-.details-divider {
-  width: 100px;
-  height: 1px;
-  background: var(--accent);
-  margin: 2rem auto;
-}
-
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.details-grid h4 {
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.details-grid p {
-  color: var(--primary);
-}
-
-.map-button {
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.map-button:hover {
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .details-card {
-    padding: 2rem;
-  }
-
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .venue-name {
-    font-size: 1.5rem;
-  }
-}
-
-.details-card {
-  max-width: 800px;
-  margin: auto;
-
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
-
-  border-radius: 32px;
-  padding: 4rem 3rem;
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,0.08);
+  padding: 140px 30px;
 
   text-align: center;
 }
 
-.invitation-line {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
+.invitation-subtitle {
+
+  color: #c8a25a;
+
+  letter-spacing: 8px;
+
   font-size: 0.8rem;
+
+  font-weight: 600;
+
+  margin-bottom: 30px;
 }
 
-.invite-heading {
-  margin-top: 1rem;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  color: var(--primary);
+.invitation-heading {
+
   font-family: "Cormorant Garamond", serif;
+
+  color: #23345f;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  font-weight: 500;
+
+  margin-bottom: 40px;
 }
 
-.ornament {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin: 2rem 0;
+.invitation-text {
+
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #6b7388;
+
+  font-size: 1.15rem;
+
+  line-height: 2;
 }
 
-.wedding-date {
+.invitation-divider {
+
+  color: #c8a25a;
+
   font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
+
+  margin: 60px 0;
 }
 
-.venue-block {
-  margin-bottom: 2rem;
+.invitation-text-small {
+
+  font-style: italic;
 }
 
-.venue-name {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
+@media (max-width: 768px) {
+
+  .invitation-section {
+
+    padding: 90px 24px;
+  }
+
+  .invitation-subtitle {
+
+    letter-spacing: 4px;
+
+    font-size: 0.7rem;
+  }
+
+  .invitation-text {
+
+    font-size: 1rem;
+  }
 }
 
-.venue-address {
-  line-height: 1.8;
-  color: var(--text-muted);
-}
+.ring-divider {
 
-.muhurtham-box {
-  margin: 2rem 0;
-}
-
-.muhurtham-box span {
-  color: var(--accent);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-}
-
-.muhurtham-box h4 {
-  margin-top: 0.5rem;
-  color: var(--primary);
-  font-size: 1.5rem;
-}
-
-.map-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-
-  background: var(--accent);
-  color: white;
-
-  padding: 14px 34px;
-  border-radius: 999px;
-
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.map-button:hover {
-  transform: translateY(-3px);
-}
-
-.wedding-details-section {
-  background: var(--bg-dark);
-}
-
-.details-subtitle {
-  color: var(--gold);
-  letter-spacing: 6px;
-}
-
-.details-title {
-  color: var(--text-light);
-  font-family: "Cormorant Garamond", serif;
-}
-
-.details-card {
-  position: relative;
-
-  background: rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(212,175,55,0.18);
-
-  border-radius: 32px;
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.25);
-
-  overflow: hidden;
-}
-
-.details-card::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(212,175,55,0.12),
-      transparent 60%
-    );
-
-  pointer-events: none;
-}
-
-.date-showcase {
   display: flex;
-  flex-direction: column;
+
+  justify-content: center;
   align-items: center;
 
-  margin-bottom: 2rem;
+  gap: 20px;
+
+  margin: 60px 0;
 }
 
-.date-day {
-  font-size: 5rem;
-  font-family: "Cormorant Garamond", serif;
-  color: var(--gold);
+.ring {
+
+  color: #c8a25a;
+
+  font-size: 2.4rem;
+
   line-height: 1;
 }
 
-.date-month {
-  letter-spacing: 8px;
-  color: var(--text-light);
-  margin-top: 0.5rem;
-}
+.heart {
 
-.date-year {
-  margin-top: 0.5rem;
-  color: var(--gold-light);
-}
+  color: #d46a6a;
 
-.gold-divider {
-  height: 2px;
+  font-size: 1.4rem;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
-
-  margin: 2rem auto;
-}
-
-.ornament {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
-.venue-name {
-  color: white;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.3rem;
-}
-
-.venue-address {
-  color: rgba(255,255,255,0.75);
-}
-
-.muhurtham-box span {
-  color: var(--gold);
-}
-
-.muhurtham-box h4 {
-  color: white;
-}
-
-.map-button {
-  background: var(--gold);
-  color: #111827;
-
-  font-weight: 600;
-}
-
-.map-button:hover {
-  transform: translateY(-4px) scale(1.03);
+  line-height: 1;
 }
